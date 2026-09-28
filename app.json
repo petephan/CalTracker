@@ -1,25 +1,52 @@
 {
   "expo": {
-    "name": "calsnap",
+    "name": "CalSnap",
     "slug": "calsnap",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.calsnap.app"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#F2F7F7",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.calsnap.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "CalSnap uses the camera to photograph your meals and estimate their nutrition."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "CalSnap lets you pick meal photos from your library to estimate their nutrition."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#006D75"
+        }
+      ],
+      "expo-font",
+      "expo-sqlite"
+    ],
+    "scheme": "calsnap",
+    "backgroundColor": "#F2F7F7"
   }
 }
