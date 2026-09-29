@@ -1,6 +1,33 @@
+![CalSnap: snap a photo of your meal, get calories and macros in seconds](docs/screenshots/banner.jpg)
+
 # CalSnap
 
 Snap a photo of your meal and get calories and macros back in seconds. Built with Expo + React Native for iOS and Android, with Claude doing the food analysis.
+
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/preview/01-scan.jpg" width="200" alt="AI scan result with a per-ingredient breakdown">
+  <img src="docs/screenshots/preview/02-today.jpg" width="200" alt="Home screen with calorie and macro rings">
+  <img src="docs/screenshots/preview/03-streaks.jpg" width="200" alt="Progress screen with streak and calendar">
+  <img src="docs/screenshots/preview/04-weight.jpg" width="200" alt="Weight trend chart">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/preview/05-day.jpg" width="200" alt="A full day of meals">
+  <img src="docs/screenshots/preview/06-edit.jpg" width="200" alt="Editing a logged meal">
+  <img src="docs/screenshots/preview/07-plan.jpg" width="200" alt="The personalised daily plan">
+</p>
+
+Full-size App Store sets: [iPhone 6.9"](docs/screenshots/app-store/iphone-6.9in) (1320×2868) and [iPad 13"](docs/screenshots/app-store/ipad-13in) (2064×2752). Screens use a seeded demo account; photo credits are in [CREDITS.md](docs/screenshots/CREDITS.md).
+
+## Highlights
+
+- **Photo to nutrition:** a vision model identifies each food, estimates portions and returns calories and macros as structured JSON, validated with Zod on the server and checked again in the app.
+- **Personalised plan:** daily targets from the Mifflin-St Jeor equation and published CDC, ISSN and Institute of Medicine guidance, with the reasoning shown to the user.
+- **Sync with an offline copy:** Supabase auth and Postgres, with row-level security so each user can only reach their own rows. Changes show instantly and save in the background; failed saves retry at next launch.
+- **Security:** the AI key never ships in the app; the analysis server requires a signed-in user, rate-limits scans and validates uploads by their file signature.
+- **Retention:** logging streaks with milestone badges, a goal-hit calendar, and reminders that skip meals you've already logged.
 
 ## Run it locally
 
